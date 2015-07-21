@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/article-index.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gulpfile.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/server.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/App.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/js/decorators/AuthenticatedComponent.js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/styles/base.scss" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/styles/reset.scss" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

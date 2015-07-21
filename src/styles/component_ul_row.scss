@@ -1,0 +1,54 @@
+
+//存放文章列表
+.article-items{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  //padding:0 5%;
+}
+.article-item{
+  flex:1 50%;
+  position:relative;
+
+  padding:10px 10px 35%;
+  display:block;
+  transition:-webkit-filter 0.1s ease-out, filter 0.1s ease-out,box-shadow .1s ease-out;
+
+  &:hover{
+    z-index:9;
+    -webkit-filter: brightness(103%);
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2),0 5px 5px 0 rgba(0,0,0,0.24);
+    //box-shadow:0 0 14px 0 rgba(0, 0, 0, 0.20), 0 5px 5px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .header{
+    position:relative;
+    z-index:2;
+    color:$white;
+  }
+  .img{
+    position:absolute;
+    @extend %cover;
+    background:#fff no-repeat center;
+    background-size:cover;
+    background-image: url(../../../src/img/2.jpg);
+  }
+
+  &:nth-child(even) .img{
+    background-image:none;
+    background-color:#0b97c4;
+  }
+
+}
+@media screen and (max-width:$width-xs){
+  .article-items{
+    padding:0;
+  }
+  .article-item{
+    flex:1 100%;
+  }
+}
+.article-item-link{
+
+}
+

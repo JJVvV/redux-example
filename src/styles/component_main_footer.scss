@@ -1,0 +1,22 @@
+
+//主页脚
+.site-footer{
+  background-color:#fff;margin-top:5%;
+}
+
+.footer-wrapper{
+  @include center($max-width);
+}
+.footer-inner{
+
+  display:flex;
+  justify-content: space-between;
+  padding:5%;
+
+}
+.social-items{
+  display:flex;
+}
+.social-item{
+  margin-left:15px;
+}

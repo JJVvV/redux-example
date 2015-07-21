@@ -1,0 +1,22 @@
+/***********
+  column
+***********/
+
+%col-base{
+  float:left;
+  padding-left:$gridGutter;
+  padding-right: $gridGutter;
+  position:relative;
+  min-height:1px;
+}
+@for $i from 1 through $gridColumns{
+  .col-#{$i}{
+    @extend %col-base;
+    width: percentage($i/$gridColumns);
+  }
+}
+@for $i from 1 through $gridColumns{
+  .col-offset-#{$i}{
+    margin-left:percentage($i/$gridColumns);
+  }
+}

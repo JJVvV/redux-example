@@ -1,0 +1,29 @@
+
+//存放布局相关的样式
+.wrapper{
+  @extend %max-width;
+  margin:0 auto;
+  padding-top:$main-nav-height + 20px;
+
+  .wrapper-inner{
+    padding-left:5%;
+    padding-right:5%;
+  }
+}
+
+@media screen and (max-width:$width-xs){
+  .wrapper{
+    padding-top: $main-nav-height + 40px;
+  }
+}
+
+/*********
+  detail.html
+*********/
+.detail-info{
+  margin-bottom:30px;
+
+  address{
+    display:inline;margin-right:10px;
+  }
+}

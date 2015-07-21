@@ -1,0 +1,28 @@
+// Core variables and mixins
+//- 参考bootstrap scss文件布局
+//- https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/_bootstrap.scss
+
+// Core variables and mixins
+@import "./_variables";
+@import "./mixins";
+@import "extends";
+//reset
+@import "reset";
+
+// base
+@import "base";
+
+//column
+@import "column";
+
+//- Component
+@import "component_layout";
+@import "component_btn";
+@import "component_main_nav";
+@import "component_ul_row";
+@import "component_main_footer";
+@import "component_form";
+@import "component_table";
+
+//j@import "test";
+

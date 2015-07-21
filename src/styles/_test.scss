@@ -1,0 +1,74 @@
+/********
+  flexbox test
+*********/
+
+.container{
+  margin-top:200px;
+  display:flex;
+
+  border:1px solid green;
+  width:200px;
+  height:300px;
+  //flex-direction: row;
+  //flex-wrap:wrap-reverse;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  align-items: flex-end;
+
+
+  .item{
+    background:#fd3427;
+    color:#fff;
+  }
+  //.item:first-child{
+  //  height:60px;
+  //}
+  //.item:nth-child(3){
+  //  height:50px;
+  //}
+  //.item:nth-child(5){
+  //  height:70px;
+  //}
+  //.item:nth-child(even){
+  //  height:40px;
+  //}
+}
+
+.parent{
+  display: flex;
+  //height:300px;
+  border:1px solid green;
+  flex-flow:row wrap;
+  justify-content:flex-end;
+
+  .child{
+    //width:100px;
+    //height:100px;
+    //width:100%;
+    //margin:auto;
+    border:1px solid green;
+    flex:1 100%;
+  }
+}
+.header, .main, .nav, .aside, .footer{
+  flex:1 100%;
+}
+@media screen and (min-width:600px){
+  .aside{
+    flex: 1 auto;
+  }
+}
+
+@media screen and (min-width: 800px){
+  .main{
+    flex:2 0px;
+  }
+  .aside-1{order:1;}
+  .main{order:2;}
+  .aside-2{order:3;}
+  .footer{order:4;}
+}
+
+
+
+

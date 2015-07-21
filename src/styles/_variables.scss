@@ -1,0 +1,102 @@
+/***********
+存放变量
+**************/
+
+//** background color for <body>
+$body-bg:#fafafa;
+
+//** global text color on <body>
+$text-color:rgba(0,0,0,0.7);
+
+//color
+$gray: #555 !default;
+$gray-light:#eee;
+$input-bg-disabled:              $gray-light !default;
+//border radius
+$border-radius-base:        4px !default;
+
+$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+//border
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
+
+//button
+$btn-font-weight:                normal !default;
+
+$btn-default-color:              #333 !default;
+$btn-default-bg:                 #fff !default;
+$btn-default-border:             #ccc !default;
+
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-border:             darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $brand-success !default;
+$btn-success-border:             darken($btn-success-bg, 5%) !default;
+
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $brand-info !default;
+$btn-info-border:                darken($btn-info-bg, 5%) !default;
+
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $brand-warning !default;
+$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
+
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $brand-danger !default;
+$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
+
+$btn-link-disabled-color:        $gray-light !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius-base:         $border-radius-base !default;
+$btn-border-radius-large:        $border-radius-large !default;
+$btn-border-radius-small:        $border-radius-small !default;
+
+
+//font
+$font-size-base: 16px !default;
+$line-height-base:1.8 !default;
+$padding-base-vertical:     6px !default;
+$padding-base-horizontal:   12px !default;
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+
+$blue: rgb(66, 133, 244);
+$white: rgba(255, 255, 255, 1);
+$nav-bg: rgba(102, 204, 153, 0.8);
+
+//gutter*2 between two column
+$gridGutter: 15px;
+$gridColumns: 12 !default;
+
+// max-width
+$max-width: 960px !default;
+
+//main nav height
+$main-nav-height:64px !default;
+
+//width
+$width-xs: 767px !default;
+$width-sm:991px !default;
+$width-md:1199px !default;
+
+//form
+$input-height-base: ($line-height-computed + ($padding-base-vertical * 2) + 2) !default;
+$input-color: $gray !default;
+$input-bg: #fff !default;
+$input-border:                   #ccc !default;
+$input-border-radius:            $border-radius-base !default;
+$input-border-focus: #66afe9 !default;
+$input-color-placeholder:        #999 !default;
+$form-group-bottom:15px !default;
+
+//cursor
+$cursor-disabled:                not-allowed !default;

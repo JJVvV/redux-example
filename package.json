@@ -1,0 +1,71 @@
+{
+  "name": "react-hot-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "boilerplate",
+    "hot",
+    "reload",
+    "hmr",
+    "live",
+    "edit",
+    "webpack"
+  ],
+  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+  },
+  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "devDependencies": {
+    "babel-core": "^5.6.17",
+    "babel-eslint": "^3.1.9",
+    "babel-loader": "^5.3.1",
+    "browser-sync": "^2.7.12",
+    "del": "^1.2.0",
+    "eslint-plugin-react": "^2.3.0",
+    "gulp": "3.8.11",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-cache": "^0.2.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-livereload": "^3.8.0",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^1.0.5",
+    "gulp-sass": "^2.0.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gutil": "^1.6.4",
+    "node-sass": "*",
+    "react-hot-loader": "^1.2.7",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2",
+    "webpack-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "es6-promise": "^2.3.0",
+    "jquery": "^2.1.4",
+    "lodash": "3.9.3",
+    "object-assign": "^3.0.0",
+    "react": "^0.13.0",
+    "react-router": "^1.0.0-beta3",
+    "redux": "^0.12.0",
+    "reflux": "^0.2.7",
+    "reqwest": "^1.1.5",
+    "superagent": "1.2.0",
+    "when": "^3.7.3"
+  }
+}
