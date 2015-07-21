@@ -1,7 +1,7 @@
-react startkit
+react blog example
 =====================
 
-react && webpack && gulp && react-router && reflux SPA
+react && webpack && gulp && react-router && redux SPA
 
 ### Usage
 
