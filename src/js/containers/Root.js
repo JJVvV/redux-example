@@ -3,11 +3,11 @@
  */
 
 import React, { PropTypes } from 'react';
-import { Redirect, Router, Route } from 'react-router';
+import { Redirect, Router, Route , Navigation} from 'react-router';
 import { Provider } from 'redux/react';
 import { createRedux } from 'redux';
 import * as blogStore from '../stores';
-
+import RouterContainer from '../services/routerContainer.js';
 import Application from '../components/Application.js'
 import Detail from '../components/pages/detail.js'
 import Post from '../components/pages/post.js'
@@ -34,18 +34,26 @@ function renderRoutes (history) {
         <Route path="index" component={Index} />
         <Route name="detail" path="detail/:id" component={Detail} onEnter={setLoading}></Route>
         <Route name="post" path="admin/post/:id" component={Post}></Route>
-        <Route name="post" path="admin/login" component={Login}></Route>
+        <Route name="post" path="admin/login" component={Login} onEnter={onLogined}></Route>
         <Redirect from="/" to="index" />
       </Route>
     </Router>
   )
 }
 
-function onEnter(nextState, transition){
-  debugger;
-  const login = blogStore.article(null, {type: 'USER'});
-  if(!login.isLogin){
+function onNotLogined(nextState, transition){
+
+  const state = redux.getState();
+  if(!state.article.user.isLogin){
     transition.to('/admin/login');
+  }
+}
+
+function onLogined(nextState, transition){
+
+  const state = redux.getState();
+  if(state.article.user.isLogin){
+    transition.to('/index');
   }
 }
 

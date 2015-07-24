@@ -13,10 +13,13 @@ import Loading from './Loading.js';
 
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
-@connect((state, prop) => ({
-  blog: state.article,
-  transitionKey: prop.location.pathname
-}))
+@connect((state, prop) => {
+
+  return {
+    blog: state.article,
+    transitionKey: prop.location.pathname
+  }
+})
 export default class Application extends React.Component{
 
   constructor(props, context){

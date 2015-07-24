@@ -28,18 +28,18 @@ export default class LoginForm extends React.Component{
 
   render(){
     //const {article} = this.props;
-    //console.log(this.props);
+
     return (
       <form action="/url" method="post" className="form form-horizontal">
         <div className="form-group">
-          <label for="name" className="control-label col-3">姓名</label>
+          <label htmlFor="name" className="control-label col-3">姓名</label>
 
           <div className="col-9">
             <input id="name" type="text" required className="form-control"/>
           </div>
         </div>
         <div className="form-group">
-          <label for="password" className="control-label col-3">密码</label>
+          <label htmlFor="password" className="control-label col-3">密码</label>
           <div className="col-9">
             <input id="password" type="password" required className="form-control"/>
           </div>

@@ -28,7 +28,7 @@ export default class ArticleDetail extends React.Component{
 
   render(){
     const {article} = this.props.blog;
-    //console.log(this.props);
+
     return (
       <article>
         <header>

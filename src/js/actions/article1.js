@@ -5,6 +5,8 @@
 import {Promise} from 'es6-promise';
 import * as constant from '../constants/articles.js';
 import reqwest from 'reqwest';
+import RouterContainer from '../services/routerContainer.js';
+
 const MAIN_URL = 'asdfasdlasldkfj';
 
 //article
@@ -100,12 +102,22 @@ export function login(){
 
       .then(res => JSON.parse)
       .then(res => {
-        if(res.result){
-          dispatch({
-            type: constant.USER,
-            user: res
-          })
-        }
+
+        //if(res.result){
+        //  dispatch({
+        //    type: constant.USER,
+        //    user: res
+        //  })
+        //}
+
+        dispatch({
+          type: constant.USER,
+          user: {
+            username: 'alex'
+          }
+        })
+        RouterContainer.get().transitionTo('index');
+
       })
 
       .catch(err => {

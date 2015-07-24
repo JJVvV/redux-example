@@ -4,24 +4,23 @@
 
 import React from 'react';
 import LoginForm from '../LoginForm.js';
-
-//@connect(state => ({
-//  article: state.article
-//}))
+import RouterContainer from '../../services/routerContainer.js';
+import {Navigation} from 'react-router';
 export default class Login{
   render(){
 
     return (
       <section className="wrapper">
         <div className="wrapper-inner">
-          <LoginForm onLogin={this.onLogin} />
+          <LoginForm onLogin={::this.onLogin} />
         </div>
       </section>
     );
   }
 
   onLogin(e){
+
     e.preventDefault();
-    alert('login');
+    this.props.action.login('username', 'password');
   }
 }
