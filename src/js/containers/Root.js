@@ -33,7 +33,7 @@ function renderRoutes (history) {
       <Route component={Application}>
         <Route path="index" component={Index} />
         <Route name="detail" path="detail/:id" component={Detail} onEnter={setLoading}></Route>
-        <Route name="post" path="admin/post/:id" component={Post} onEnter={onEnter}></Route>
+        <Route name="post" path="admin/post/:id" component={Post}></Route>
         <Route name="post" path="admin/login" component={Login}></Route>
         <Redirect from="/" to="index" />
       </Route>

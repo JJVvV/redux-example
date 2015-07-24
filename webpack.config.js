@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 console.log('***********************');
 console.log(path.join(__dirname, 'src'));
-console.log('webpack.optimize.CommonsChunkPlugin', webpack.optimize.CommonsChunkPlugin);
+
 module.exports = {
   devtool: 'source-map',
 

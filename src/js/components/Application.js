@@ -5,6 +5,7 @@
 import React, { PropTypes } from 'react/addons.js';
 import classnames from 'classnames';
 import { connect } from 'redux/react'
+import { bindActionCreators } from 'redux'
 import * as articlesAction from '../actions/article1.js';
 import Header from './Header'
 import Footer from './Footer'
@@ -24,10 +25,12 @@ export default class Application extends React.Component{
   }
 
   render(){
+    const { dispatch } = this.props;
+    const actions = bindActionCreators(articlesAction, dispatch);
 
     const loading = this.props.blog.loading;
     const loadingChild = loading ? <Loading /> : null;
-
+    const props = this.props;
     return (
       <div id="layout">
         <Header />
@@ -36,7 +39,9 @@ export default class Application extends React.Component{
               {React.cloneElement(
                 this.props.children,
                 {
-                  key: this.props.transitionKey
+                  key: this.props.transitionKey,
+                  action: actions,
+                  ...props
                 }
                 )}
             </ReactCSSTransitionGroup>

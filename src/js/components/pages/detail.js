@@ -9,17 +9,17 @@ import { bindActionCreators } from 'redux'
 import ArticleDetail from '../ArticleDetail.js';
 import * as articleAction from '../../actions/article1.js'
 
-@connect(state => ({
-  blog: state.article
-}))
+//@connect(state => ({
+//  blog: state.article
+//}))
 export default class Detail extends React.Component{
   render(){
-    const { dispatch } = this.props
-    const actions = bindActionCreators(articleAction, dispatch);
+    //const { dispatch } = this.props
+    //const actions = bindActionCreators(articleAction, dispatch);
     return (
       <div className="wrapper">
         <div className="wrapper-inner">
-          <ArticleDetail action={actions} {...this.props} />
+          <ArticleDetail {...this.props} />
         </div>
       </div>
     );
