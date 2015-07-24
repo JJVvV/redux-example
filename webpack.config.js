@@ -26,11 +26,22 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    loaders: [{
+    loaders: [
+      {
       test: /\.jsx?$/,
-      loaders: ['react-hot', 'babel'],
+      loader: 'react-hot',
       include: path.join(__dirname, 'src')
-    }]
+    },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel',
+        include: path.join(__dirname, 'src'),
+        query:{
+          optional: ['runtime']
+
+        }
+      }
+    ]
   },
     debug:true
 };

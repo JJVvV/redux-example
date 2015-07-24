@@ -5,15 +5,13 @@
 import React, {PropTypes} from 'react';
 import { Router} from 'react-router';
 import assign from 'object-assign';
-console.log(Router);
-debugger;
+
 
 export default function authentic(){
     return function(DecoratedComponent){
         class AuthenticatedComponent extends React.Component {
 
             static onEnter(nextState, transition){
-                debugger;
                 transition.to('/login');
             }
 
@@ -22,7 +20,7 @@ export default function authentic(){
             //}
             componentWillMount(){
 
-                console.log(this.transitionTo);
+
             }
 
             constructor(props){

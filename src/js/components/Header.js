@@ -8,8 +8,8 @@ import NavItem from './NavItem.js'
 import Logo from './Logo.js'
 
 const list = [
-  {link:'#', text: 'index1'},
-  {link:'#', text: 'index2'},
+  {link:'admin/login', text: 'index1'},
+  {link:'index', text: 'index2'},
   {link:'#', text: 'index3'},
   {link:'#', text: 'index4'}
 ];

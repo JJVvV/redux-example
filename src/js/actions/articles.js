@@ -4,7 +4,7 @@
 
 import {Promise} from 'es6-promise';
 import reqwest from 'reqwest';
-import * as types from '../constants/articles.js';
+import * as constant from '../constants/articles.js';
 
 const MAIN_URL = 'asdkasdlfkj';
 
@@ -15,7 +15,7 @@ export function loadArticles(){
 
     .then(res => JSON.parse)
     .then(res => dispatch({
-        type: types.LOAD_ARTICLES,
+        type: constant.LOAD_ARTICLES,
         articles: res
       }))
 
@@ -34,7 +34,7 @@ export function loadArticles(){
           }
         ];
         dispatch({
-          type: types.LOAD_ARTICLES,
+          type: constant.LOAD_ARTICLES,
           articles: articles
         });
       });

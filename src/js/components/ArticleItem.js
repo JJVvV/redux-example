@@ -15,17 +15,18 @@ export default class SocialItem{
 
   render(){
 
-    const {title, id, img} = this.props;
-    const style = {
-      backgorundImage: `url(${img})`
-    };
+    const {title, id,detail, img} = this.props;
+
     return(
       <li className="article-item">
-        <Link to={`detail/${id}`} className="article-item-link">
-          <div className="header">
+        <Link to={`detail/${id}`} className="article-item-link clearfix">
+          <div className="article-item-content">
             <h3>{title}</h3>
+            <p>{detail}</p>
           </div>
-          <div className="img" style={style}></div>
+          <div className="article-item-cover">
+            <img src={img} alt=""/>
+          </div>
         </Link>
 
       </li>

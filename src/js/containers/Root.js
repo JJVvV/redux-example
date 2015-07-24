@@ -6,13 +6,14 @@ import React, { PropTypes } from 'react';
 import { Redirect, Router, Route } from 'react-router';
 import { Provider } from 'redux/react';
 import { createRedux } from 'redux';
-import * as stores from '../stores';
+import * as blogStore from '../stores';
+
 import Application from '../components/Application.js'
 import Detail from '../components/pages/detail.js'
 import Post from '../components/pages/post.js'
 import Index from '../components/pages/index.js'
 import Login from '../components/pages/login.js'
-const redux = createRedux(stores);
+const redux = createRedux(blogStore);
 
 export default class Root {
   render(){
@@ -31,7 +32,7 @@ function renderRoutes (history) {
     <Router history={history}>
       <Route component={Application}>
         <Route path="index" component={Index} />
-        <Route name="detail" path="detail/:id" component={Detail}></Route>
+        <Route name="detail" path="detail/:id" component={Detail} onEnter={setLoading}></Route>
         <Route name="post" path="admin/post/:id" component={Post} onEnter={onEnter}></Route>
         <Route name="post" path="admin/login" component={Login}></Route>
         <Redirect from="/" to="index" />
@@ -41,9 +42,13 @@ function renderRoutes (history) {
 }
 
 function onEnter(nextState, transition){
-  const login = stores.login();
+  debugger;
+  const login = blogStore.article(null, {type: 'USER'});
   if(!login.isLogin){
     transition.to('/admin/login');
   }
-  debugger;
+}
+
+function setLoading(nextState, transition){
+  redux.getState().article.loading = true;
 }

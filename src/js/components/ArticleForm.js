@@ -27,7 +27,7 @@ export default class ArticleDetail extends React.Component{
 
 
   render(){
-    const {article} = this.props;
+    const {article} = this.props.blog;
     //console.log(this.props);
     return (
       <form action="/url" className="form form-horizontal" method="POST">

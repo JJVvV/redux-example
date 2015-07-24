@@ -7,11 +7,10 @@ import {Link} from 'react-router';
 import { connect } from 'redux/react'
 import { bindActionCreators } from 'redux'
 import ArticleDetail from '../ArticleDetail.js';
-import * as articleAction from '../../actions/article.js'
+import * as articleAction from '../../actions/article1.js'
 
-console.log(connect);
 @connect(state => ({
-  article: state.article
+  blog: state.article
 }))
 export default class Detail extends React.Component{
   render(){

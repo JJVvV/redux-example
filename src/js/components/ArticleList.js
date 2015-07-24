@@ -21,7 +21,7 @@ export default class ArticleList extends React.Component{
   }
 
   renderList(){
-    return this.props.articles.map((item, i) =>{
+    return this.props.blog.articles.map((item, i) =>{
       return <ArticleItem key={i} {...item} />
     });
   }

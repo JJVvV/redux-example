@@ -83,3 +83,9 @@
   $opacity-ie: ($opacity * 100);
   filter: alpha(opacity=$opacity-ie);
 }
+
+//article-item-child
+@mixin article-item-child($width, $float){
+  width:$width;
+  float:$float;
+}

@@ -10,13 +10,14 @@ const MAIN_URL = 'asdfasdlasldkfj';
 export function loadArticle(id){
 
   return dispatch => {
-
     reqwest(`${MAIN_URL}/detail/${id}`)
-    .then(res => JSON.parse)
-    .then(res => dispatch({
-        type: types.LOAD_ARTICLE,
-        articles: res
-      }))
+
+    //.then(res => JSON.parse)
+      //.then(res => dispatch({
+      //    type: types.LOAD_ARTICLE,
+      //    articles: res
+      //  }))
+
     .always(err => {
         const articles = [
           {

@@ -100,3 +100,9 @@ $form-group-bottom:15px !default;
 
 //cursor
 $cursor-disabled:                not-allowed !default;
+
+//article-item
+
+$article-item-content-width: 0.6 !default; //60%
+$article-item-cover-width: 1 - $article-item-content-width;
+

@@ -4,7 +4,7 @@
 
 import {Promise} from 'es6-promise';
 import reqwest from 'reqwest';
-import * as types from '../constants/articles.js';
+import * as constant from '../constants/articles.js';
 
 const MAIN_URL = 'asdkasdlfkj';
 
@@ -19,7 +19,7 @@ export function login(){
     .then(res => {
         if(res.result){
           dispatch({
-            type: 'LOGIN',
+            type: constant.USER,
             user: res
           })
         }

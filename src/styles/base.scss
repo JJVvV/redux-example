@@ -26,3 +26,7 @@ body{
   background: rgba(217, 217, 217, 0.9);
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
+
+a, a:visited, a:hover, a:active{
+  color:$text-color;
+}
