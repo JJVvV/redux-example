@@ -195,6 +195,7 @@ export function logout(){
         jwt: ''
       }
     });
+    RouterContainer.get().transitionTo('index');
   }
 }
 

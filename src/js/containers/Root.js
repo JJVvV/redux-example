@@ -14,6 +14,7 @@ import Post from '../components/pages/post.js'
 import Index from '../components/pages/index.js'
 import Login from '../components/pages/login.js'
 import ReduxContainer from '../services/reduxContainer.js';
+import after from '../common/after.js';
 
 const redux = createRedux(blogStore);
 ReduxContainer.set(redux);
@@ -35,7 +36,7 @@ function renderRoutes (history) {
       <Route component={Application} onEnter={setJwt}>
         <Route path="index" component={Index} onEnter={setLoading} />
         <Route name="detail" path="detail/:id" component={Detail} onEnter={setLoading}></Route>
-        <Route name="post" path="admin/post/:id" component={Post}></Route>
+        <Route name="post" path="admin/post/:id" component={Post} onEnter={onNotLogined.after(setLoading)}></Route>
         <Route name="post" path="admin/login" component={Login} onEnter={onLogined}></Route>
         <Redirect from="/" to="index" />
       </Route>
@@ -48,7 +49,9 @@ function onNotLogined(nextState, transition){
   const state = redux.getState();
   if(!state.article.user.isLogin){
     transition.to('/admin/login');
+    return false;
   }
+  return true;
 }
 
 function onLogined(nextState, transition){
@@ -57,6 +60,7 @@ function onLogined(nextState, transition){
   if(state.article.user.isLogin){
     transition.to('/index');
   }
+  return true;
 }
 
 function setLoading(nextState, transition){
