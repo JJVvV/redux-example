@@ -15,7 +15,7 @@ export default class NavItem{
   render(){
     return(
       <li className="nav-item">
-        {this.renderLink()}
+        {this.props.children || this.renderLink()}
       </li>
     );
   }

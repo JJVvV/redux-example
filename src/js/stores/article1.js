@@ -14,8 +14,16 @@ const actionsMap = {
   [constant.USER]: (state, action) => {
     let user = action.user || {};
 
-    user.isLogin = user && !!user.username;
+    if(user.jwt){
+      user.isLogin = true;
+      localStorage.setItem('jwt', user.jwt);
+    }
+
     return {user}
+  },
+  [constant.LOGOUT]: (state, action) => {
+    return {user:action.user};
+
   }
 }
 

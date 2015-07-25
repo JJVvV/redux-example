@@ -13,13 +13,10 @@ import Loading from './Loading.js';
 
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
-@connect((state, prop) => {
-
-  return {
-    blog: state.article,
-    transitionKey: prop.location.pathname
-  }
-})
+@connect((state, prop) => ({
+  blog: state.article,
+  transitionKey: prop.location.pathname
+}))
 export default class Application extends React.Component{
 
   constructor(props, context){
@@ -36,7 +33,7 @@ export default class Application extends React.Component{
     const props = this.props;
     return (
       <div id="layout">
-        <Header />
+        <Header isLogin={props.blog.user.isLogin} action={actions} />
           <div id="main" className={classnames({'loading-hidden': loading, 'loading-transition': !loading})}>
             <ReactCSSTransitionGroup transitionName="page" transitionLeave={false} component="div">
               {React.cloneElement(

@@ -13,8 +13,10 @@ import Detail from '../components/pages/detail.js'
 import Post from '../components/pages/post.js'
 import Index from '../components/pages/index.js'
 import Login from '../components/pages/login.js'
-const redux = createRedux(blogStore);
+import ReduxContainer from '../services/reduxContainer.js';
 
+const redux = createRedux(blogStore);
+ReduxContainer.set(redux);
 export default class Root {
   render(){
     const {history} = this.props;
@@ -30,8 +32,8 @@ export default class Root {
 function renderRoutes (history) {
   return (
     <Router history={history}>
-      <Route component={Application}>
-        <Route path="index" component={Index} />
+      <Route component={Application} onEnter={setJwt}>
+        <Route path="index" component={Index} onEnter={setLoading} />
         <Route name="detail" path="detail/:id" component={Detail} onEnter={setLoading}></Route>
         <Route name="post" path="admin/post/:id" component={Post}></Route>
         <Route name="post" path="admin/login" component={Login} onEnter={onLogined}></Route>
@@ -59,4 +61,14 @@ function onLogined(nextState, transition){
 
 function setLoading(nextState, transition){
   redux.getState().article.loading = true;
+}
+
+function setJwt(){
+
+}
+
+var jwt = localStorage.getItem('jwt');
+if(jwt){
+  //redux.getState().article.user.jwt = jwt;
+  redux.dispatch({type:'USER', user:{jwt:jwt}});
 }

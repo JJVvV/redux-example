@@ -8,8 +8,8 @@ import NavItem from './NavItem.js'
 import Logo from './Logo.js'
 
 const list = [
-  {link:'admin/login', text: 'index1'},
-  {link:'index', text: 'index2'},
+  {link:'admin/login', text: 'login'},
+  {link:'index', text: 'blog'},
   {link:'#', text: 'index3'},
   {link:'#', text: 'index4'}
 ];
@@ -17,11 +17,12 @@ const list = [
 export default class Header extends React.Component {
 
   render(){
+
     return(
       <header className="site-header">
         {this.renderLogo()}
 
-        {this.renderNav()}
+        {::this.renderNav()}
       </header>
     );
   }
@@ -34,6 +35,9 @@ export default class Header extends React.Component {
 
   renderNav(){
     var navList = list.map((item, i) => {
+      if(item.link == 'admin/login' && this.props.isLogin){
+        return <NavItem><a href="javascript:;"  onClick={::this.logout}>logout</a></NavItem>
+      }
       return <NavItem key={i} {...item} />
     });
 
@@ -45,5 +49,10 @@ export default class Header extends React.Component {
 
       </nav>
     );
+  }
+
+  logout(e){
+    e.preventDefault();
+    this.props.action.logout();
   }
 }

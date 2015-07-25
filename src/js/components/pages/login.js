@@ -18,9 +18,7 @@ export default class Login{
     );
   }
 
-  onLogin(e){
-
-    e.preventDefault();
-    this.props.action.login('username', 'password');
+  onLogin(username, password){
+    this.props.action.login(username, password);
   }
 }
