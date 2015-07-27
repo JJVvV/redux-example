@@ -27,7 +27,7 @@ export default class ArticleDetail extends React.Component{
 
 
   render(){
-    const {article} = this.props.blog;
+    const {article, user} = this.props.blog;
 
     return (
       <article>
@@ -42,6 +42,15 @@ export default class ArticleDetail extends React.Component{
         <div className="detial-content">
           {article.content}
         </div>
+
+        {
+          user.isLogin ?
+            (
+            <div>
+              <Link to={`admin/post/${article.id}`}>我要约炮, 修改</Link>
+            </div>
+            ) : ''
+        }
       </article>
     );
   }

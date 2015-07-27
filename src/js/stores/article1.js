@@ -10,6 +10,7 @@ const initialState = {
 
 const actionsMap = {
   [constant.LOAD_ARTICLE]: (state, action) => ({article: action.article}),
+  //[constant.SAVE_ARTICLE]: (state, action) => ({article: action.article}),
   [constant.LOAD_ARTICLES]: (state, action) => ({articles: action.articles}),
   [constant.USER]: (state, action) => {
     let user = action.user || {};

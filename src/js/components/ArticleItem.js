@@ -4,7 +4,7 @@
 
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
-
+var baseImgUrl = 'http://localhost:3003/upload/';
 export default class SocialItem{
 
   static propTypes = {
@@ -15,17 +15,17 @@ export default class SocialItem{
 
   render(){
 
-    const {title, id,detail, img} = this.props;
+    const {title, id,content, cover} = this.props;
 
     return(
       <li className="article-item">
         <Link to={`detail/${id}`} className="article-item-link clearfix">
           <div className="article-item-content">
             <h3>{title}</h3>
-            <p>{detail}</p>
+            <p>{content}</p>
           </div>
           <div className="article-item-cover">
-            <img src={img} alt=""/>
+            <img src={baseImgUrl + cover} alt=""/>
           </div>
         </Link>
 

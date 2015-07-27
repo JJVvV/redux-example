@@ -2,12 +2,22 @@
  * Created by Administrator on 2015/7/10.
  */
 
-import React, {PropTypes} from 'react';
+import React, {PropTypes} from 'react/addons.js';
 import {Link} from 'react-router';
 import ArticleItem from './ArticleItem.js';
 import shallowEqualScalar from 'redux/lib/utils/shallowEqualScalar'
 
 export default class ArticleDetail extends React.Component{
+  constructor(){
+    super();
+
+    this.state = {
+      title:'',
+      cover:'',
+      content:''
+    }
+  }
+
   componentWillMount(){
     const {params} = this.props;
     this.props.action.loadArticle(params.id);
@@ -25,41 +35,51 @@ export default class ArticleDetail extends React.Component{
     }
   }
 
+  componentWillReceiveProps(nextProp){
+    var {title, content, cover} = nextProp.blog.article;
+    this.setState({
+      title,
+      content,
+      cover
+    });
+  }
 
   render(){
-    const {article} = this.props.blog;
+    //const {article} = this.props.blog;
+
 
     return (
-      <form action="/url" className="form form-horizontal" method="POST">
+      <form action="http://localhost:3003/admin/article" className="form form-horizontal" method="POST" encType="multipart/form-data">
+        <input type="hidden" name="id" value={this.props.params.id} />
         <div className="form-group">
           <label htmlFor="title" className="control-label col-2">标题</label>
           <div className="col-10">
-            <input type="text" name="title" id="title" className="form-control" value={article.title} />
+            <input type="text" name="title" id="title" className="form-control" valueLink={this.linkState('title')} />
 
           </div>
         </div>
 
         <div className="form-group">
-          <label htmlFor="upload" className="control-label col-2">上传</label>
+          <label htmlFor="cover" className="control-label col-2">上传</label>
 
           <div className="col-10">
-            <input type="file" name="upload" id="upload" className="" />
+            <input type="file" name="cover" id="cover"  className="" />
 
           </div>
         </div>
 
         <div className="form-group">
-          <label htmlFor="text" className="control-label col-2">正文</label>
+          <label htmlFor="content" className="control-label col-2">正文</label>
 
           <div className="col-10">
-            <textarea name="text" id="text" cols="30" rows="10" value={article.content} className="form-control"></textarea>
+            <textarea name="content" id="content" cols="30" rows="10" valueLink={this.linkState('content')} className="form-control"></textarea>
 
           </div>
         </div>
 
         <div className="form-group">
           <div className="col-10 col-offset-2">
-            <button className="btn btn-primary">提交</button>
+            <button type="submit" className="btn btn-primary" onClick={::this.onSubmit}>提交</button>
 
           </div>
         </div>
@@ -67,7 +87,16 @@ export default class ArticleDetail extends React.Component{
       </form>
     );
   }
+
+  onSubmit(e){
+
+    //e.preventDefault();
+    //var {title, cover, content} = this.state;
+    //var id = this.props.params.id;
+    //this.props.action.saveArticle({title, cover, content, id});
+  }
 }
 
+Object.assign(ArticleDetail.prototype, React.addons.LinkedStateMixin);
 
 
