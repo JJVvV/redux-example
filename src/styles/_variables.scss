@@ -3,7 +3,7 @@
 **************/
 
 //** background color for <body>
-$body-bg:#fafafa;
+$body-bg:#fafafe;
 
 //** global text color on <body>
 $text-color:rgba(0,0,0,0.7);
@@ -12,6 +12,7 @@ $text-color:rgba(0,0,0,0.7);
 $gray: #555 !default;
 $gray-light:#eee;
 $input-bg-disabled:              $gray-light !default;
+$orange-base: #fa7d3c !default;
 //border radius
 $border-radius-base:        4px !default;
 
@@ -81,8 +82,8 @@ $gridColumns: 12 !default;
 $max-width: 960px !default;
 
 //main nav height
-$main-nav-height:64px !default;
-
+$main-nav-height:44px !default;
+$main-nav-top-border: 2px !default;
 //width
 $width-xs: 767px !default;
 $width-sm:991px !default;

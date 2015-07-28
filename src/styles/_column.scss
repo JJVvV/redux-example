@@ -10,6 +10,7 @@
   min-height:1px;
 }
 
+
 @for $i from 1 through $gridColumns{
   .col-#{$i}{
     @extend %col-base;

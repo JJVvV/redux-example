@@ -14,17 +14,10 @@ export default class NavItem{
 
   render(){
     return(
-      <li className="nav-item">
-        {this.props.children || this.renderLink()}
-      </li>
-    );
-  }
-
-  renderLink(){
-    return(
       <Link to={this.props.link}>
-        {this.props.text}
+        {this.props.children || this.props.text}
       </Link>
     );
   }
+
 }

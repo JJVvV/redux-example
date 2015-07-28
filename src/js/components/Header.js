@@ -7,17 +7,15 @@ import { Link } from 'react-router'
 import NavItem from './NavItem.js'
 import Logo from './Logo.js'
 
+
 const list = [
-  {link:'admin/login', text: 'login'},
-  {link:'index', text: 'blog'},
-  {link:'#', text: 'index3'},
-  {link:'#', text: 'index4'}
+  {link:'admin/login', text: '登录'},
+  {link:'index', text: '博客'}
 ];
 
 export default class Header extends React.Component {
 
   render(){
-
     return(
       <header className="site-header">
         {this.renderLogo()}
@@ -25,6 +23,7 @@ export default class Header extends React.Component {
         {::this.renderNav()}
       </header>
     );
+
   }
 
   renderLogo(){
@@ -36,17 +35,15 @@ export default class Header extends React.Component {
   renderNav(){
     var navList = list.map((item, i) => {
       if(item.link == 'admin/login' && this.props.isLogin){
-        return <NavItem><a href="javascript:;"  onClick={::this.logout}>logout</a></NavItem>
+        return <a key={i} className="nav-item" href="javascript:;"  onClick={::this.logout}>logout</a>
+
       }
       return <NavItem key={i} {...item} />
     });
 
     return (
       <nav className="nav">
-        <ul className="nav-items">
-          {navList}
-        </ul>
-
+        {navList}
       </nav>
     );
   }
