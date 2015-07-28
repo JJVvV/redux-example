@@ -9,18 +9,18 @@ module.exports = {
   entry: {
     'App': [ 'webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server', './src/App'],
 
-    'AdminApp': [ 'webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server', './src/AdminApp']
+    //'AdminApp': [ 'webpack-dev-server/client?http://localhost:3000', 'webpack/hot/only-dev-server', './src/AdminApp']
   },
   output: {
-    path: path.join(__dirname, 'dist/assets/js'), //运行webpack生成的文件存放目录
+    path: path.join(__dirname, './public/js'), //运行webpack生成的文件存放目录
     filename: '[name].bundle.js',
     publicPath: '/static/',
-    chunkFilename: '[id].chunk.js'
+    //chunkFilename: '[id].chunk.js'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('common.js')
+    //new webpack.optimize.CommonsChunkPlugin('common.js')
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']

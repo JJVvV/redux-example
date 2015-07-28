@@ -7,7 +7,7 @@ import * as constant from '../constants/articles.js';
 import reqwest from 'reqwest';
 import RouterContainer from '../services/routerContainer.js';
 import ReduxContainer from '../services/reduxContainer.js';
-const MAIN_URL = 'http://localhost:3003';
+const MAIN_URL = '';
 
 //article
 export function loadArticle(id){

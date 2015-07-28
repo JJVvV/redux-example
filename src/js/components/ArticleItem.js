@@ -4,7 +4,7 @@
 
 import React, {PropTypes} from 'react';
 import {Link} from 'react-router';
-var baseImgUrl = 'http://localhost:3003/upload/';
+var baseImgUrl = '/upload/';
 export default class SocialItem{
 
   static propTypes = {

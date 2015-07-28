@@ -38,6 +38,7 @@ exports.renderArticles = function(req, res){
     if(err){
       console.log(err);
     }
+    articles = articles || [];
     var rtnArticles = articles.map(function(item, i){
       var article = {};
       var dot = item.content.length > 20 ? '...' : '';

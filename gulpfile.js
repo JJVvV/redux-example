@@ -17,7 +17,9 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     livereload = require('gulp-livereload'),
-    del = require('del');
+    del = require('del'),
+    gulp = require('gulp'),
+    server = require('gulp-express');
 
 //var webpack = require('webpack-stream');
 var webpack = require('webpack');
@@ -45,7 +47,7 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('dist/assets/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
-        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('./public/css'))
         .pipe(livereload())
          //.pipe(notify({ message: 'Styles task complete' }));
 });
@@ -121,6 +123,15 @@ gulp.task("webpack-dev-server", function(callback) {
 
 });
 
+
+
+gulp.task('server', function () {
+    // Start the server at the beginning of the task
+    server.run(['app.js']);
+
+    // Restart the server when file changes
+    gulp.watch(['app.js', './config/**/*.js', './views/**/*.handlebars'], [server.run]);
+});
 //watch
 gulp.task('watch', function() {
 

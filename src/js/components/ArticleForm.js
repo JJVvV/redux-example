@@ -49,7 +49,7 @@ export default class ArticleDetail extends React.Component{
 
 
     return (
-      <form action="http://localhost:3003/admin/article" className="form form-horizontal" method="POST" encType="multipart/form-data">
+      <form action="/admin/article" className="form form-horizontal" method="POST" encType="multipart/form-data">
         <input type="hidden" name="id" value={this.props.params.id} />
         <div className="form-group">
           <label htmlFor="title" className="control-label col-2">标题</label>
