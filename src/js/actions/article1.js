@@ -19,20 +19,17 @@ export function loadArticle(id){
         article: {}
       });
     }
-    setTimeout(() => {
-      reqwest(`${MAIN_URL}/api/article/${id}`)
-        //.then(res => JSON.parse)
-        .then(res => {
-          if(res.result){
-            dispatch({
-              type: constant.LOAD_ARTICLE,
-              article: res.article
-            })
-          }
+    reqwest(`${MAIN_URL}/api/article/${id}`)
+      //.then(res => JSON.parse)
+      .then(res => {
+        if(res.result){
+          dispatch({
+            type: constant.LOAD_ARTICLE,
+            article: res.article
+          })
+        }
 
-        })
-
-    }, 500);
+      })
   }
 }
 

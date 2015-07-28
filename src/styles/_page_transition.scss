@@ -5,6 +5,7 @@
   visibility: hidden;
 }
 
+
 .loading-transition{
   transition:opacity .3s ease-in-out;
 }
@@ -16,7 +17,7 @@
 
 .page-enter.page-enter-active {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity .7s ease-in-out;
 }
 
 .page-leave {

@@ -41,12 +41,14 @@ gulp.task('styles', function() {
     return gulp.src(getStylePath(['main']))
         .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
-        .pipe(concat('all.css'))
-        .pipe(gulp.dest('dist/assets/css'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(minifycss())
+      .pipe(sourcemaps.write('./'))
+       // .pipe(autoprefixer())
+
+        //.pipe(concat('all.css'))
+        //.pipe(gulp.dest('dist/assets/css'))
+        //.pipe(rename({suffix: '.min'}))
+        //.pipe(minifycss())
+
         .pipe(gulp.dest('./public/css'))
         .pipe(livereload())
          //.pipe(notify({ message: 'Styles task complete' }));
@@ -130,13 +132,14 @@ gulp.task('server', function () {
     server.run(['app.js']);
 
     // Restart the server when file changes
-    gulp.watch(['app.js', './config/**/*.js', './views/**/*.handlebars'], [server.run]);
+
 });
 //watch
 gulp.task('watch', function() {
 
     // Create LiveReload server
     livereload.listen();
+    server.run(['app.js']);
     console.log('livereload server active');
     // Watch .scss files
     gulp.watch('src/styles/**/*.scss', ['styles']);
@@ -146,7 +149,7 @@ gulp.task('watch', function() {
     gulp.watch('src/images/**/*', ['images']);
     //gulp.watch('src/js/**/*.js', ['webpack']);
 
-
+    gulp.watch(['app.js', './config/**/*.js', './views/**/*.handlebars'], [server.run]);
 
 
     //gulp.watch(['dist/assets/css/main.css']).on('change', livereload.changed);
@@ -154,7 +157,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.run('styles', 'scripts', 'images', 'watch'); //, 'webpack-dev-server'
+    gulp.run('styles', 'scripts', 'images', 'watch'); //,'webpack-dev-server'
 
     //gulp.run('watch');
 });

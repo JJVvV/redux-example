@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "9c3a429bc5de4e31340e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bc30a2e4fdeda10861dc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -28837,18 +28837,16 @@
 	        article: {}
 	      });
 	    }
-	    setTimeout(function () {
-	      (0, _reqwest2['default'])(MAIN_URL + '/api/article/' + id)
-	      //.then(res => JSON.parse)
-	      .then(function (res) {
-	        if (res.result) {
-	          dispatch({
-	            type: constant.LOAD_ARTICLE,
-	            article: res.article
-	          });
-	        }
-	      });
-	    }, 500);
+	    (0, _reqwest2['default'])(MAIN_URL + '/api/article/' + id)
+	    //.then(res => JSON.parse)
+	    .then(function (res) {
+	      if (res.result) {
+	        dispatch({
+	          type: constant.LOAD_ARTICLE,
+	          article: res.article
+	        });
+	      }
+	    });
 	  };
 	}
 	
